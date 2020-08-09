@@ -25,6 +25,8 @@ Plugin 'pseewald/vim-anyfold'
 Plugin 'ycm-core/YouCompleteMe'
 "Colors preview
 Plugin 'ap/vim-css-color'
+"Language Check
+Plugin 'rhysd/vim-grammarous'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
@@ -42,6 +44,8 @@ let g:airline_theme='deus'
 syntax on
 map <C-o> :NERDTreeToggle<CR>
 map <C-f> :Files<CR>
+map <C-g> :GrammarousCheck --lang=fr<CR>
+map <C-e> :GrammarousCheck --lang=en<CR>
 filetype plugin indent on " required
 autocmd Filetype * AnyFoldActivate               " activate for all filetypes
 set foldlevel=99 " Open all folds
