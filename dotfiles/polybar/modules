@@ -1,0 +1,161 @@
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+
+ws-icon-0 = 1 home;
+ws-icon-1 = 2 web;
+ws-icon-2 = 3 term;
+ws-icon-3 = 4 code;
+ws-icon-4 = 5 files;
+ws-icon-5 = 6 doc;
+ws-icon-6 = 7 notes;
+ws-icon-7 = 8 discord;
+ws-icon-8 = 9 music;
+ws-icon-9 = 10 extra;
+ws-icon-default = default
+strip-wsnumbers = true
+label-empty-foreground = ${colors.color8}
+label-empty-background = ${colors.background}
+label-focused-underline = ${colors.color1}
+label-focused = %icon% %name%
+label-focused-padding = 2
+label-occupied = %icon%
+label-occupied-padding = 1
+label-empty = %icon%
+label-empty-padding = 1
+label-unfocused-padding = 1
+index-sort = true
+label-visible-padding = 1
+label-focused-foreground = #ffffff
+label-occupied-foreground = #ffffff
+
+[module/date]
+type = internal/date
+
+date-alt = %d/%m/%Y
+time = %H:%M
+format =  <label>
+format-foreground = ${colors.color8}
+format-padding = 1
+label = %date% %time%
+label-foreground = ${colors.foreground}
+
+[module/battery]
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+label-charging = %percentage%%
+label-discharging = %percentage%%
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
+animation-charging-framerate = 750
+
+label-charging-foreground = ${colors.foreground}
+label-discharging-foreground = ${colors.foreground}
+label-full-foreground = ${colors.foreground}
+
+format-charging-foreground = ${colors.color8}
+format-charging-background = ${colors.background}
+format-discharging-background = ${colors.background}
+format-full-background = ${colors.background}
+format-discharging-foreground = ${colors.color8}
+format-full-foreground = ${colors.color8}
+
+format-charging-padding = 1
+format-discharging-padding = 1
+format-full-padding = 1
+
+[module/network]
+type = internal/network
+interface = wlp3s0
+interval = 3.0
+unknown-as-up = true
+accumulate-stats = true
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+format-connected-padding = 1
+format-connected-foreground = ${colors.color8}
+label-connected-foreground = ${colors.foreground}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+
+[module/alsa]
+type = internal/alsa
+
+format-volume = <ramp-volume> <label-volume>
+format-muted-prefix = " "
+label-muted = " mute"
+format-muted-padding = 1
+format-muted-background = ${colors.background}
+label-muted-foreground = ${colors.foreground}
+format-muted-foreground = ${colors.color8}
+format-volume-background = ${colors.background}
+label-volume-foreground = ${colors.foreground}
+format-volume-foreground = ${colors.color8}
+format-volume-padding = 1
+
+ramp-volume-0 = " "
+ramp-volume-1 = " "
+ramp-volume-2 = " "
+ramp-volume-3 = " "
+ramp-volume-4 = " "
+
+[module/backlight]
+type = internal/backlight
+
+card = amdgpu_bl0
+enable-scroll = true
+format =  <label>
+format-padding = 1
+format-foreground = ${colors.color8}
+format-background = ${colors.background}
+label-foreground = ${colors.foreground}
+label = %percentage%%
+
+[module/cpu]
+type = internal/cpu
+
+format =  <label>
+format-foreground = ${colors.color8}
+format-background = ${colors.background}
+format-padding = 2
+label = %percentage%%
+label-foreground = ${colors.foreground}
+
+[module/memory]
+type = internal/memory
+interval = 5
+
+format =  <label>
+label = %percentage_used%%
+format-foreground = ${colors.color8}
+format-background = ${colors.background}
+label-foreground = ${colors.foreground}
+format-padding = 2
