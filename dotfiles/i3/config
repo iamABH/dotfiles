@@ -178,7 +178,5 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
-## Bar
 exec polybar mybar &
-## Lockscreen
 exec betterlockscreen -l dimblur -t "wake up abh .-."
